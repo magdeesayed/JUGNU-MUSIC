@@ -22,7 +22,7 @@ module.exports = async (client) => {
     if (!guildIds || !guildIds.length) return;
     for (const gId of guildIds) {
       let guild = client.guilds.cache.get(gId);
-      if (!guild) await client.autoresume.delete(gId);
+      if (!guild) await client.autoresume.delete(guild.id);
       let data = await client.autoresume.get(guild.id);
       if (!data) return;
       let voiceChannel = guild.channels.cache.get(data.voiceChannel);
@@ -805,3 +805,4 @@ module.exports = async (client) => {
       .catch((e) => null);
   }
 };
+        
