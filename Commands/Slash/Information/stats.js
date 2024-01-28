@@ -46,8 +46,9 @@ module.exports = {
           .setTitle("__**Stats:**__")
           .setThumbnail(client.user.displayAvatarURL())
           .setDescription(
-            `> ** Made by [\` Kabir Jaipal \`](https://www.instagram.com/kabirjaipal_2004) **`
+            `**__Bot Name:__** ${client.user.username}           **__Bot Tag:__** ${client.user.tag} \n`
           )
+
           .addFields([
             {
               name: `⏳ Memory Usage`,
@@ -73,16 +74,6 @@ module.exports = {
             {
               name: `📁 Channels`,
               value: `\`${client.channels.cache.size}\``,
-              inline: true,
-            },
-            {
-              name: `👾 Discord.JS`,
-              value: `\`v${version}\``,
-              inline: true,
-            },
-            {
-              name: `🤖 Node`,
-              value: `\`${process.version}\``,
               inline: true,
             },
             {
@@ -115,3 +106,4 @@ module.exports = {
     });
   },
 };
+                    
