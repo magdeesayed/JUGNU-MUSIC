@@ -105,3 +105,4 @@ client.on("interactionCreate", async (interaction) => {
     await interaction.deferUpdate().catch((e) => {});
   }
 });
+    
