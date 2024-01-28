@@ -159,7 +159,7 @@ module.exports = async (client) => {
   client.queueembed = (guild) => {
     let embed = new EmbedBuilder()
       .setColor(client.config.embed.color)
-      .setTitle(`Jugnu | Queue`);
+      .setTitle(`Queue for ${guild.name}`);
     // .setDescription(`\n\n ** There are \`0\` Songss in Queue ** \n\n`)
     // .setThumbnail(guild.iconURL({ dynamic: true }))
     // .setFooter({
@@ -178,12 +178,10 @@ module.exports = async (client) => {
       .setColor(client.config.embed.color)
       // .setTitle(`Join a Voice Channel and Type Song Link/Name to Play`)
       .setAuthor({
-        name: `Join a Voice Channel and Type Song Link/Name to Play`,
+        name: `أدخل إلى روم صوتي وأكتب هنا أسم الأغنية|رابط الأغنية وسيتم تشغيلها على الفور 😎`,
         iconURL: client.user.displayAvatarURL(),
       })
-      .setDescription(
-        ` [Invite Now](${client.config.links.inviteURL}) • [Support Server](${client.config.links.DiscordServer}) • [Website](${client.config.links.Website})`
-      )
+      .setDescription(`\n\n ** There are \`0\` Songss in Queue ** \n\n`)
       .setImage(
         guild.banner
           ? guild.bannerURL({ size: 4096 })
@@ -267,7 +265,7 @@ module.exports = async (client) => {
         new EmbedBuilder()
           .setColor(client.config.embed.color)
           .setAuthor({
-            name: `Jugnu Queue  -  [ ${queue.songs.length} Tracks ]`,
+            name: `  [ ${queue.songs.length} Tracks ]`,
             iconURL: guild.iconURL({ dynamic: true }),
           })
           .setDescription(string.substring(0, 2048))
@@ -404,7 +402,7 @@ module.exports = async (client) => {
       .addFields([
         {
           name: `Stats`,
-          value: `>>> ** :gear: \`${allcommands}\` Commands \n :file_folder: \`${allguilds}\` Guilds \n ⌚️ ${botuptime} Uptime \n 🏓 \`${client.ws.ping}\` Ping \n  Made by [\` Fire Bird \`](https://discord.gg/PcUVWApWN3) **`,
+          value: `>>> ** :gear: \`${allcommands}\` Commands \n :file_folder: \`${allguilds}\` Guilds \n ⌚️ ${botuptime} Uptime \n 🏓 \`${client.ws.ping}\` Ping \n **`,
         },
       ])
       .setFooter(client.getFooter(user));
@@ -520,3 +518,4 @@ module.exports = async (client) => {
     });
   };
 };
+    
