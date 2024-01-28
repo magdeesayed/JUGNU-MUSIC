@@ -93,4 +93,5 @@ client.on("messageCreate", async (message) => {
 
 function escapeRegex(newprefix) {
   return newprefix.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
-}
+        }
+                                 
