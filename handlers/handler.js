@@ -36,7 +36,6 @@ module.exports = async (client) => {
       } else {
         let guild = client.guilds.cache.get(slash.guildID);
         if (guild) await guild.commands.set(allCommands);
-        await client.application.commands.set([]);
       }
     });
   } catch (e) {
@@ -56,8 +55,6 @@ module.exports = async (client) => {
           client.mcommands.set(command.name, command);
           if (command.aliases && Array.isArray(command.aliases))
             command.aliases.forEach((a) => client.aliases.set(a, command.name));
-        } else {
-          console.log(`${cmd} is not ready`);
         }
       }
     });
